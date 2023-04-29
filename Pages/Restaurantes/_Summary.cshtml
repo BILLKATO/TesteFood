@@ -1,0 +1,27 @@
+﻿@using TesteFood.Core
+@model Restaurant
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>@Model.nome</h3>
+    </div>
+    <div class="panel-body">
+        <span>Location: @Model.location</span>
+        <span>Cozinha: @Model.cozinha</span>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-lg" asp-page="./Detalhes" asp-route-restaurantId="@Model.ID">
+            <i class="glyphicon glyphicon-zoom-in"></i>
+        </a>
+
+        <a class="btn btn-lg" asp-page="./Edit" asp-route-restaurantId="@Model.ID">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+
+        <a class="btn btn-lg" asp-page="./Delete" asp-route-restaurantId="@Model.ID">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+</div>

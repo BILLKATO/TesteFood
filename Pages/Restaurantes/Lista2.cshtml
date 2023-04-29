@@ -1,0 +1,31 @@
+﻿@page
+@model TesteFood.Pages.Restaurantes.Lista2Model
+@{
+}
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+@if (@Model.Message != null)
+{
+  <div class="alert alert-info">@Model.Message</div>
+}
+
+<h1>Restaurantes</h1>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-default">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+
+</form>
+<hr />
+
+@foreach(var restaurant in Model.Restaurantes)
+{
+ <partial name="_Summary" model="restaurant" />
+}
+<a asp-page=".\Edit" class="btn btn-primary">Adicionar Restaurante</a>

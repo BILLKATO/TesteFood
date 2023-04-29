@@ -1,0 +1,20 @@
+﻿@page "{restaurantId:int}"
+@model TesteFood.Pages.Restaurantes.DetalhesModel
+@{
+}
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<h2>@Model.Restaurant.nome</h2>
+<table class="table">
+    <tr><td>@Model.Restaurant.ID</td></tr>
+    <tr><td>@Model.Restaurant.location</td></tr>
+    <tr><td>@Model.Restaurant.cozinha</td></tr>
+</table>
+<a asp-page="./Lista" class="btn btn-primary">Todos os Restaurantes</a>

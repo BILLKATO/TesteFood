@@ -1,0 +1,14 @@
+﻿@page "{restaurantId:int}"
+@model TesteFood.Pages.Restaurantes.DeleteModel
+@{
+}
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+
+<h2>Deletar</h2>
+ <div class="alert alert-danger">
+     Você Tem Certeza que deseja excluir @Model.Restaurant.nome
+ </div>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Sim!</button>
+    <a asp-page="./Lista" class="btn btn-default">Cancelar</a>
+</form>
